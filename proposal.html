@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Question</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+min-height:100vh;
+background:linear-gradient(135deg,#8b0000,#ff4d6d,#ffffff);
+font-family:Poppins;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+overflow:hidden;
+}
+
+/* Hearts */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:floatUp 8s linear infinite;
+opacity:0.7;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+
+.box{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+padding:60px 40px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 0 30px rgba(255,77,109,0.6);
+max-width:400px;
+width:90%;
+}
+
+h1{
+font-family:'Great Vibes';
+font-size:3.5rem;
+margin-bottom:30px;
+}
+
+.buttons{
+margin-top:30px;
+position:relative;
+height:60px;
+}
+
+button{
+padding:12px 28px;
+border:none;
+border-radius:25px;
+font-size:1rem;
+cursor:pointer;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+}
+
+#no{
+background:#ffffff;
+color:#b11226;
+position:absolute;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h1>Will You Be Mine Forever? ❤️</h1>
+
+<div class="buttons">
+<button id="yes" onclick="yesAnswer()">Yes</button>
+<button id="no" onmouseover="moveNo()">No</button>
+</div>
+</div>
+
+<script>
+function yesAnswer(){
+window.location.href="final.html";
+}
+
+function moveNo(){
+const btn=document.getElementById("no");
+const x=Math.random()*200;
+const y=Math.random()*40;
+btn.style.left=x+"px";
+btn.style.top=y+"px";
+}
+
+/* Floating Hearts */
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*4+4)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>

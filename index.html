@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Promise Day</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#8b0000,#ff4d6d,#ffffff);
+overflow-x:hidden;
+color:white;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:floatUp 8s linear infinite;
+opacity:0.7;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0) scale(1)}
+100%{transform:translateY(-120vh) scale(1.6)}
+}
+
+/* Hero Section */
+
+.hero{
+text-align:center;
+padding:80px 20px 40px;
+}
+
+.hero h1{
+font-family:'Great Vibes';
+font-size:4rem;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:1.1rem;
+opacity:0.9;
+}
+
+/* Card Section */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+border-radius:25px;
+padding:25px;
+text-align:center;
+box-shadow:0 0 25px rgba(255,77,109,0.5);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-12px) scale(1.03);
+box-shadow:0 0 40px rgba(255,77,109,0.8);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+margin-bottom:15px;
+}
+
+.card h3{
+font-size:1.4rem;
+margin-bottom:8px;
+}
+
+.card a{
+display:inline-block;
+margin-top:12px;
+padding:10px 26px;
+background:#ff4d6d;
+color:white;
+text-decoration:none;
+border-radius:25px;
+}
+
+footer{
+text-align:center;
+padding:25px;
+opacity:0.8;
+}
+
+/* Fade Animation */
+
+.fade{
+animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(30px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero fade">
+<h1>Happy Promise Day Nivetha ❤️</h1>
+<p>From Yaduraj, with endless love</p>
+</div>
+
+<div class="cards fade">
+
+<!-- CARD 1 -->
+<div class="card">
+<img src="Images/WhatsApp Image 2026-02-11 at 1.14.33 PM (1).jpeg">
+<h3>Our Love Story</h3>
+<a href="love.html">Open</a>
+</div>
+
+<!-- CARD 2 -->
+<div class="card">
+<img src="Images/WhatsApp Image 2026-02-11 at 1.14.33 PM.jpeg">
+<h3>One Question For You</h3>
+<a href="proposal.html">Open</a>
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+<img src="Images/WhatsApp Image 2026-02-11 at 1.14.34 PM.jpeg">
+<h3>My Promise</h3>
+<a href="promise.html">Open</a>
+</div>
+
+</div>
+
+<footer>
+<p>Made with ❤️ by Yaduraj</p>
+</footer>
+
+<!-- Floating Hearts Script -->
+<script>
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*4+4)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>

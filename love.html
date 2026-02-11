@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Love Story</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+min-height:100vh;
+background:linear-gradient(135deg,#8b0000,#ff4d6d,#ffffff);
+font-family:Poppins;
+color:white;
+overflow-x:hidden;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:floatUp 8s linear infinite;
+opacity:0.7;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0)}
+100%{transform:translateY(-120vh)}
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:80px 20px;
+text-align:center;
+}
+
+h1{
+font-family:'Great Vibes';
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.love-box{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+padding:40px;
+border-radius:30px;
+box-shadow:0 0 30px rgba(255,77,109,0.6);
+}
+
+#typing{
+font-size:1.2rem;
+line-height:1.8;
+}
+
+/* Button */
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:12px 30px;
+background:#ff4d6d;
+color:white;
+text-decoration:none;
+border-radius:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Our Love Story ❤️</h1>
+
+<div class="love-box">
+<p id="typing"></p>
+</div>
+
+<a href="proposal.html" class="btn">Continue</a>
+</div>
+
+<script>
+const text = `
+It all started with a simple suggestion on my Instagram feed, and I never imagined it would lead me here — to a place where my heart belongs to you completely. The moment I began dreaming about my future, I knew you were the one I wanted to walk beside through every struggle, every smile, and every storm.
+
+We may fight, we may misunderstand each other, and honestly, I don’t mind if we fight a thousand times — because loving you is always worth it. But when distance entered our lives, everything changed. Not being able to hold you, touch you, or feel your love completely has made my heart feel heavy in ways I never knew before.
+
+Sometimes I feel scared… scared of losing you, scared of being replaced, scared of not being enough. Most of our fights happen because I crave your love, your attention, your presence. I don’t want anyone else’s place in your life — I just want my place to remain yours.
+
+I understand you have new friends and new people around you, and I respect that. All I ask is that when you are with them, don’t forget me and don’t let anyone else take my place in you heart, i just want to know where you are and are you safe and all, but the thing i want to convey always lead to misunderstandings, i just want to be feel secured around you, just convey me what happens everyday with truth and also please gentle with me when you talk with me because the words you speak maybe in anger but it feels like heavy stones in my heart which can't be thrown. And when you come back to me, come back with the same love, warmth, and closeness — because that is what I miss the most.
+
+Yes, I am jealous. Yes, I am overprotective. But it’s only because I love you more than I know how to explain. And I promise I will keep loving you this way until the day you tell me to stop.
+
+This is my promise:
+I fall in love with you more and more every single day.
+I choose you, today and always.
+
+I just want you to be completely mine…
+And I will always be completely yours.
+
+I love you, Nivetha. ❤️`;
+
+let i=0;
+function typeText(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeText,50);
+}
+}
+typeText();
+
+/* Floating Hearts */
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*4+4)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),8000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
